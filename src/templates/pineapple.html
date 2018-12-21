@@ -1,0 +1,10 @@
+<!doctype html>
+<title>Hello from Flask</title>
+{% if amount %}
+  <h1>Hello Pineapple Fan! Here are {{amount}} Pineapples</h1>
+  {% for amount in range(amount) %}
+    <img src="{{ url_for('static', filename='chillPineapple.jpg') }}" alt="A Chill Pineapple">
+  {% endfor %}
+{% else %}
+  <h1>Hello, World!</h1>
+{% endif %}
