@@ -2,4 +2,6 @@
 
 pineappleProject.egg-info/
 
+.*~
+
 dist/
