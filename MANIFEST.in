@@ -1,0 +1,2 @@
+recursive-include pypineapple/static *
+recursive-include pypineapple/templates *
