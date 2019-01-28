@@ -1,8 +1,6 @@
 from flask import Flask
 from flask import render_template
-import requests
-import json
-
+import requests, json
 
 app = Flask(__name__)
 
@@ -16,14 +14,16 @@ def welcome():
 @app.route('/pineapple/')
 @app.route('/pineapple/<int:amount>')
 def pineapple(amount=None):
+    # Pass the amount and display it with Jinja2 template.
     return render_template('pineapple.html', amount=amount)
 
 @app.route('/pineapple/ready/<int:smellStrength>')
 def getDaysUntilReady(smellStrength):
+    # Download smell strength to ready lookup table
     lookupUrl = "https://s3.us-east-2.amazonaws.com/pineapplecharts/readyLookup.json"
-
     lookUpTable = json.loads(requests.get(lookupUrl).text)
 
+    # Use the lookup table to determine days until ready
     for prediction in lookUpTable:
         if prediction["SmellStrength"] == smellStrength:
             days = prediction["daysFromBeingReady"]
