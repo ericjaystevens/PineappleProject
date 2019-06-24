@@ -14,7 +14,7 @@ def test_transitive():
 @pytest.mark.parametrize("equal_input, expected", [
     (1,1),
     (2,2),
-    (3,3),
+    (3,4),
     (5,5),
 ])
 
