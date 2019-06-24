@@ -18,14 +18,21 @@ def pineapple(amount=None):
     return render_template('pineapple.html', amount=amount)
 
 @app.route('/pineapple/ready/<int:smellStrength>')
-def getDaysUntilReady(smellStrength):
-    # Download smell strength to ready lookup table
-    lookupUrl = "https://s3.us-east-2.amazonaws.com/pineapplecharts/readyLookup.json"
-    lookUpTable = json.loads(requests.get(lookupUrl).text)
+def displayUntilReady(smellStrength):   
+    lookUpTable = getLookupTable()
+    days = getDaysUntilReady(smellStrength, lookUpTable)
+    return render_template('readytoeat.html', days=days)
 
+def getDaysUntilReady(smellStrength, lookUpTable):
     # Use the lookup table to determine days until ready
     for prediction in lookUpTable:
         if prediction["SmellStrength"] == smellStrength:
             days = prediction["daysFromBeingReady"]
+    return days
 
-    return render_template('readytoeat.html', days=days)
+def getLookupTable():
+    # Download smell strength to ready lookup table
+    lookupUrl = "https://s3.us-east-2.amazonaws.com/pineapplecharts/readyLookup.json"
+    lookUpTable = json.loads(requests.get(lookupUrl).text)
+    return lookUpTable
+

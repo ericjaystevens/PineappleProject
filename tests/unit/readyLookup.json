@@ -1,0 +1,50 @@
+[
+    {
+      "SmellStrength": 0,
+      "daysFromBeingReady": 5
+    },
+    {
+      "SmellStrength": 1,
+      "daysFromBeingReady": 5
+    },
+    {
+      "SmellStrength": 2,
+      "daysFromBeingReady": 4
+    },
+    {
+      "SmellStrength": 3,
+      "daysFromBeingReady": 3
+    },
+    {
+      "SmellStrength": 3,
+      "daysFromBeingReady": 2
+    },
+    {
+      "SmellStrength": 4,
+      "daysFromBeingReady": 2
+    },
+    {
+      "SmellStrength": 5,
+      "daysFromBeingReady": 1
+    },
+    {
+      "SmellStrength": 6,
+      "daysFromBeingReady": 1
+    },
+    {
+      "SmellStrength": 7,
+      "daysFromBeingReady": 0
+    },
+    {
+      "SmellStrength": 8,
+      "daysFromBeingReady": 0
+    },
+    {
+      "SmellStrength": 9,
+      "daysFromBeingReady": -1
+    },
+    {
+      "SmellStrength": 10,
+      "daysFromBeingReady": -2
+    }
+  ]
