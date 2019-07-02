@@ -32,7 +32,7 @@ cp pineappleProject.wsgi.py /var/www/pythonApps/pineappleProject/
 chown -r www-data /var/www/pythonApps/pineappleProject
 ```
 
-Configure a new site in apache
+Configure the new site in apache
 
 ```bash
 cd pineappleProject-version/exapmpleConfigs
