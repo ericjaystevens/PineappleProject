@@ -8,7 +8,7 @@ pipeline {
         }
         stage('test'){
             steps{
-                sh 'python3 -m pytest tests/test_sample.py --verbose'
+                sh 'python3 -m pytest tests/ --verbose'
             }
         }
         stage('deploy'){
