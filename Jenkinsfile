@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps{
-                sh 'cd PineappleProject; python3 setup.py build'
+                sh 'python3 setup.py build'
             }
         }
         stage('test'){
