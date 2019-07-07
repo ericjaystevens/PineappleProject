@@ -41,7 +41,7 @@ cp pineappleProject.conf /etc/apache2/sites-available
 a2ensite pineappleProject
 ```
 
-Restart apache
+Restart Apache
 
 ```bash
 service apache2 Restart
