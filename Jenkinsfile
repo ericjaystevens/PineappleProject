@@ -8,13 +8,18 @@ pipeline {
         }
         stage('test'){
             steps{
-                sh 'python3 -m pytest tests/ --verbose'
+                sh 'python3 -m pytest tests/ --junitxml=tests-$BUILD_NUMBER.xml'
             }
         }
         stage('deploy'){
             steps{
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'webserver', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'PineappleProject/build/lib/pypineapple/**/*')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }    
+        }
+    } post {
+        always{
+            archiveArtifacts artifacts: 'build/lib/*'
+            junit tests-$BUILD_NUMBER.xml
         }
     }
 }
