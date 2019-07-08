@@ -19,7 +19,7 @@ pipeline {
     } 
     post {
         always {
-            archiveArtifacts artifacts: 'build/lib/*'
+            archiveArtifacts artifacts: 'build/lib/**/*'
             junit 'tests-$BUILD_NUMBER.xml'
         }
     }
