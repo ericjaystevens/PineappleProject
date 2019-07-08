@@ -5,7 +5,7 @@ from pypineapple import pineapple as p
 
 # uses hard coded values to test, not a best practice
 def test_getDaysUntilReadyHardCoded():
-    with open('tests\\unit\\readyLookup.json') as lookUpFile:
+    with open('tests/unit/readyLookup.json') as lookUpFile:
         lookUpTable = json.load(lookUpFile)
     smellStrength = 1
     days = p.getDaysUntilReady(smellStrength, lookUpTable)
