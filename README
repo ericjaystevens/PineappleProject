@@ -64,4 +64,4 @@ $env:FLASK_APP='.\src\pineapple.py'
 Flask run
 ```
 
-Browse to  http://127.0.0.1:5000/pineapple/2
+Browse to http://127.0.0.1:5000/pineapple/2
