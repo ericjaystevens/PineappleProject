@@ -16,9 +16,6 @@ pipeline {
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'webserver', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'build/lib/pypineapple/**/*')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'webserver', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'setup.py')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
                 sshPublisher(publishers: [sshPublisherDesc(configName: 'webserver', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'exampleConfigs/*')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
-                sshPublisher(publishers: [sshPublisherDesc(configName: 'webserver', transfers: [sshTransfer(
-                    execCommand: 'sudo /bin/bash /home/jenkins/exampleConfigs/deployPineapple.sh', execTimeout: 120000, usePty: true)])])   
-            }    
         }
     }
 }
